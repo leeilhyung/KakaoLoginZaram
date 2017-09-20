@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="kakaotalk-login-plugin-zaram"
+    version="1.0.0">
+    <name>Kakaotalk Login Cordova Plugin</name>
+    <description></description>
+    <license>MIT</license>
+    <keywords>kakao,kakaotalk</keywords>
+    <!-- <repo>https://github.com/driftyco/cordova-plugin-template.git</repo>
+    <issue>https://github.com/driftyco/cordova-plugin-template/issues</issue> -->
+
+    <!-- android -->
+    <platform name="android">
+      <js-module src="www/zaram_kakao_login.js" name="plugin">
+        <runs/>
+        <!-- This is the window variable name you want, like window.MyCordovaPlugin -->
+        <clobbers target="ZaramKakaoLogin" />
+      </js-module>
+      <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="ZaramKakaoLogin">
+          <param name="android-package" value="com.zaram.danim.ZaramKakaoLogin" />
+          <param name="onload" value="true" />
+        </feature>
+      </config-file>
+
+      <source-file src="src/android/com/zaram/danim/ZaramKakaoLogin.java" target-dir="src/com/zaram/danim/" />
+    </platform>
+
+    <!-- ios -->
+    <platform name="ios">
+        <js-module src="www/zaram_kakao_login.js" name="plugin">
+            <runs/>
+            <clobbers target="ZaramKakaoLogin" />
+        </js-module>
+        <config-file target="config.xml" parent="/*">
+            <feature name="ZaramKakaoLogin">
+                <param name="ios-package" value="ZaramKakaoLogin" onload="true" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/ZaramKakaoLogin.h" />
+        <source-file src="src/ios/ZaramKakaoLogin.m" />
+    </platform>
+</plugin>
